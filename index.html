@@ -11,40 +11,35 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    /* ========================================
-       CSS Custom Properties
-       ======================================== */
     :root {
-      --bg-primary: #111111;
-      --bg-secondary: #1a1a1a;
-      --bg-card: #1f1f1f;
+      --bg-primary: #0e0e0e;
+      --bg-secondary: #151515;
+      --bg-tertiary: #1a1a1a;
+      --bg-card: #181818;
+      --bg-card-hover: #1d1d1d;
       --gold: #C9A84C;
+      --gold-light: #dcc070;
       --gold-hover: #d4b65e;
-      --gold-dim: rgba(201, 168, 76, 0.15);
-      --text-primary: #E8E4DC;
-      --text-secondary: #a09a90;
-      --text-dark: #111111;
+      --gold-dim: rgba(201, 168, 76, 0.12);
+      --gold-glow: rgba(201, 168, 76, 0.08);
+      --text-primary: #F0EDE6;
+      --text-secondary: #9e9787;
+      --text-muted: #6b6459;
+      --text-dark: #0e0e0e;
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-gold: rgba(201, 168, 76, 0.2);
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'DM Sans', sans-serif;
-      --max-width: 1100px;
-      --section-py: 120px;
-      --section-px: 24px;
+      --max-width: 1140px;
+      --section-py: 140px;
+      --section-px: 28px;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    /* ========================================
-       Reset & Base
-       ======================================== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
@@ -53,138 +48,161 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ========================================
-       Typography
-       ======================================== */
+    /* ========== Typography ========== */
     h1, h2, h3 {
       font-family: var(--font-display);
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.15;
+      color: var(--text-primary);
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 1.2rem;
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      margin-bottom: 1.5rem;
     }
 
     .section-sub {
       color: var(--text-secondary);
       font-size: 1.1rem;
-      max-width: 640px;
-      line-height: 1.8;
+      max-width: 620px;
+      line-height: 1.85;
     }
 
-    /* ========================================
-       Layout
-       ======================================== */
+    /* ========== Layout ========== */
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--section-px);
     }
 
-    .section {
-      padding: var(--section-py) 0;
-    }
-
-    .section--alt {
-      background: var(--bg-secondary);
-    }
+    .section { padding: var(--section-py) 0; position: relative; }
+    .section--alt { background: var(--bg-secondary); }
 
     .section-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 72px;
     }
 
-    .section-header .section-sub {
-      margin: 0 auto;
-    }
+    .section-header .section-sub { margin: 0 auto; }
 
     .tag {
       display: inline-block;
       font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      position: relative;
+      padding: 0 24px;
     }
 
-    /* ========================================
-       Buttons
-       ======================================== */
+    .tag::before, .tag::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .tag::before { left: 0; }
+    .tag::after { right: 0; }
+
+    /* Decorative divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto;
+      width: 80px;
+      padding-top: 8px;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    .divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ========== Buttons ========== */
     .btn {
       display: inline-block;
-      padding: 16px 36px;
-      border-radius: 4px;
+      padding: 18px 40px;
+      border-radius: 2px;
       font-family: var(--font-body);
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease);
       cursor: pointer;
       border: none;
+      position: relative;
     }
 
     .btn--primary {
-      background: var(--gold);
+      background: linear-gradient(135deg, var(--gold) 0%, #b8963e 100%);
       color: var(--text-dark);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
     }
 
     .btn--primary:hover {
-      background: var(--gold-hover);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
     }
 
     .btn--secondary {
       background: transparent;
       color: var(--gold);
-      border: 1px solid var(--gold);
+      border: 1px solid rgba(201, 168, 76, 0.4);
     }
 
     .btn--secondary:hover {
-      background: rgba(201, 168, 76, 0.1);
-      transform: translateY(-2px);
+      background: rgba(201, 168, 76, 0.08);
+      border-color: var(--gold);
+      transform: translateY(-3px);
     }
 
-    /* ========================================
-       Navigation
-       ======================================== */
+    /* ========== Navigation ========== */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 20px 0;
-      transition: all 0.3s ease;
+      padding: 24px 0;
+      transition: all 0.4s var(--ease);
     }
 
     .navbar.scrolled {
-      background: rgba(17, 17, 17, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 14px 0;
-      box-shadow: 0 1px 0 rgba(201, 168, 76, 0.1);
+      background: rgba(14, 14, 14, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .navbar .container {
@@ -195,74 +213,70 @@
 
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: var(--text-primary);
     }
 
-    .nav-logo span {
-      color: var(--gold);
-    }
+    .nav-logo span { color: var(--gold); font-style: italic; }
 
-    .nav-links {
-      display: flex;
-      gap: 40px;
-    }
+    .nav-links { display: flex; gap: 44px; }
 
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       transition: color 0.3s;
+      position: relative;
     }
 
-    .nav-links a:hover {
-      color: var(--gold);
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease);
     }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
 
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 6px;
     }
 
     .hamburger span {
       display: block;
-      width: 24px;
-      height: 2px;
+      width: 22px;
+      height: 1.5px;
       background: var(--text-primary);
-      transition: all 0.3s ease;
+      transition: all 0.3s var(--ease);
     }
 
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* ========================================
-       Hero
-       ======================================== */
+    /* ========== Hero ========== */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px var(--section-px) 80px;
+      padding: 140px var(--section-px) 100px;
       position: relative;
       overflow: hidden;
     }
@@ -270,254 +284,395 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(ellipse, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+      height: 200px;
+      background: linear-gradient(to top, var(--bg-secondary), transparent);
       pointer-events: none;
+    }
+
+    /* Decorative kanji watermark */
+    .hero-watermark {
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: clamp(12rem, 25vw, 22rem);
+      font-weight: 300;
+      color: rgba(201, 168, 76, 0.03);
+      pointer-events: none;
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 780px;
+      z-index: 2;
+      max-width: 800px;
     }
 
-    .hero .tag {
-      font-size: 0.8rem;
-      margin-bottom: 24px;
-    }
+    .hero .tag { font-size: 0.75rem; margin-bottom: 28px; }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(2.6rem, 6.5vw, 4.4rem);
       font-weight: 700;
-      margin-bottom: 24px;
-      line-height: 1.15;
+      margin-bottom: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
     }
 
-    .hero h1 span {
-      color: var(--gold);
-    }
+    .hero h1 .gold { color: var(--gold); }
+    .hero h1 .italic { font-style: italic; font-weight: 500; }
 
     .hero-sub {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.9;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    /* ========================================
-       Problem Section
-       ======================================== */
-    .problem-content {
-      max-width: 720px;
-      margin: 0 auto;
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: float 2.5s ease-in-out infinite;
     }
 
+    .hero-scroll-hint .arrow {
+      width: 1px;
+      height: 24px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ========== Problem Section ========== */
     .problem-body {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      margin-bottom: 48px;
-      line-height: 1.8;
+      margin-bottom: 56px;
+      line-height: 1.9;
       text-align: center;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .pain-points {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .pain-point {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
-      padding: 24px;
-      background: var(--bg-card);
+      gap: 18px;
+      padding: 28px 28px;
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(24,24,24,0.5) 100%);
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.4s var(--ease);
+    }
+
+    .pain-point:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
     }
 
     .pain-point-icon {
       flex-shrink: 0;
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold);
-      font-size: 1.1rem;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 50%;
       margin-top: 2px;
+    }
+
+    .pain-point-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
     }
 
     .pain-point p {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* ========================================
-       Approach Section (3 Cards)
-       ======================================== */
+    /* ========== Approach Section ========== */
     .approach-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .approach-card {
-      padding: 40px 32px;
+      padding: 44px 36px;
       background: var(--bg-card);
-      border: 1px solid var(--gold-dim);
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      transition: all 0.4s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .approach-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s var(--ease);
     }
 
     .approach-card:hover {
-      border-color: rgba(201, 168, 76, 0.35);
-      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .approach-card:hover::before { opacity: 1; }
+
+    .approach-card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      margin-bottom: 24px;
+      background: var(--gold-glow);
+    }
+
+    .approach-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
     }
 
     .approach-card-label {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .approach-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
     }
 
     .approach-card p {
       color: var(--text-secondary);
       font-size: 0.95rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* ========================================
-       For Whom Section (4 Cards)
-       ======================================== */
+    /* ========== For Whom ========== */
     .whom-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .whom-card {
-      padding: 36px 32px;
+      padding: 40px 36px;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      transition: all 0.4s var(--ease);
+      position: relative;
     }
 
     .whom-card:hover {
-      border-color: var(--gold-dim);
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .whom-card-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .whom-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
     }
 
     .whom-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       margin-bottom: 12px;
-      color: var(--gold);
+      color: var(--text-primary);
     }
 
     .whom-card p {
       color: var(--text-secondary);
       font-size: 0.95rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .whom-note {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 48px;
       font-size: 0.9rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-style: italic;
     }
 
-    /* ========================================
-       How It Works (Steps)
-       ======================================== */
+    /* ========== How It Works ========== */
+    .steps-container { position: relative; }
+
+    .steps-line {
+      display: none;
+      position: absolute;
+      top: 32px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold), var(--gold-dim));
+      opacity: 0.3;
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      counter-reset: step;
-    }
-
-    .step {
-      text-align: center;
-      counter-increment: step;
+      gap: 36px;
       position: relative;
     }
+
+    .step { text-align: center; }
 
     .step-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       border: 1px solid var(--gold);
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: var(--gold);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      position: relative;
+      background: var(--bg-primary);
+      z-index: 1;
+      box-shadow: 0 0 30px var(--gold-glow);
     }
 
     .step h3 {
       font-size: 1.15rem;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-weight: 600;
     }
 
     .step p {
       font-size: 0.9rem;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* ========================================
-       Pricing
-       ======================================== */
+    /* ========== Pricing ========== */
     .pricing-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
     .pricing-card {
-      padding: 48px 40px;
+      padding: 52px 44px;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
       position: relative;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease);
     }
 
     .pricing-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
     .pricing-card.featured {
       border: 1px solid var(--gold);
-      background: linear-gradient(180deg, rgba(201, 168, 76, 0.06) 0%, var(--bg-card) 40%);
+      background: linear-gradient(180deg, rgba(201, 168, 76, 0.05) 0%, var(--bg-card) 50%);
+    }
+
+    .pricing-card.featured::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 14px;
+      padding: 1px;
+      background: linear-gradient(180deg, var(--gold), transparent 60%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .pricing-badge {
@@ -525,55 +680,53 @@
       top: -14px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--gold);
+      background: linear-gradient(135deg, var(--gold), #b8963e);
       color: var(--text-dark);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 6px 20px;
+      padding: 7px 22px;
       border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
     }
 
     .pricing-label {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .pricing-title {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .pricing-desc {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      margin-bottom: 32px;
-      line-height: 1.7;
+      margin-bottom: 36px;
+      line-height: 1.75;
     }
 
-    .pricing-amount {
-      margin-bottom: 8px;
-    }
+    .pricing-amount { margin-bottom: 8px; }
 
     .pricing-amount .total {
       font-family: var(--font-display);
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 700;
       color: var(--text-primary);
     }
 
     .pricing-amount .period {
       font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-left: 4px;
+      color: var(--text-muted);
+      margin-left: 6px;
     }
 
     .pricing-monthly {
@@ -586,33 +739,49 @@
       font-size: 0.85rem;
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 32px;
-    }
-
-    .pricing-spacer {
-      margin-bottom: 32px;
-    }
-
-    .pricing-features {
-      list-style: none;
       margin-bottom: 36px;
     }
+
+    .pricing-spacer { margin-bottom: 36px; }
+
+    .pricing-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+      margin-bottom: 28px;
+    }
+
+    .pricing-features { margin-bottom: 40px; }
 
     .pricing-features li {
       font-size: 0.9rem;
       color: var(--text-secondary);
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 10px 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .pricing-features li::before {
-      content: '\2713';
-      color: var(--gold);
-      font-weight: 700;
+    .pricing-features li + li {
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .pricing-check {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--gold-dim);
       flex-shrink: 0;
+    }
+
+    .pricing-check svg {
+      width: 10px;
+      height: 10px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2.5;
     }
 
     .pricing-card .btn {
@@ -621,323 +790,237 @@
       width: 100%;
     }
 
-    /* ========================================
-       Testimonials
-       ======================================== */
+    /* ========== Testimonials ========== */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .testimonial {
-      padding: 36px 32px;
+      padding: 40px 36px;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      transition: all 0.4s var(--ease);
+      position: relative;
+    }
+
+    .testimonial:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-stars svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold);
     }
 
     .testimonial-quote {
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-style: italic;
-      line-height: 1.7;
-      margin-bottom: 24px;
+      line-height: 1.75;
+      margin-bottom: 28px;
       color: var(--text-primary);
       position: relative;
-      padding-top: 24px;
     }
 
-    .testimonial-quote::before {
-      content: '\201C';
-      position: absolute;
-      top: -8px;
-      left: 0;
-      font-size: 3rem;
-      color: var(--gold);
-      line-height: 1;
-      font-style: normal;
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .testimonial-author {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    .testimonial-author strong {
-      color: var(--gold);
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold-glow));
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
       font-weight: 600;
+      color: var(--gold);
     }
 
-    /* ========================================
-       CTA Section
-       ======================================== */
+    .testimonial-info { }
+
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ========== CTA Section ========== */
     .cta-section {
       text-align: center;
-      padding: 100px 0;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .cta-section h2 {
-      margin-bottom: 20px;
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .cta-section .section-sub {
-      margin: 0 auto 40px;
-    }
+    .cta-section h2 { margin-bottom: 20px; }
+    .cta-section .section-sub { margin: 0 auto 44px; }
 
     .cta-options {
       display: flex;
-      gap: 32px;
+      gap: 48px;
       justify-content: center;
-      margin-top: 48px;
+      margin-top: 56px;
       flex-wrap: wrap;
     }
 
-    .cta-option {
-      text-align: center;
-    }
+    .cta-option { text-align: center; }
 
     .cta-option-label {
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin-bottom: 8px;
     }
 
     .cta-option a {
       color: var(--gold);
       font-size: 0.95rem;
-      transition: opacity 0.3s;
+      transition: all 0.3s;
     }
 
-    .cta-option a:hover {
-      opacity: 0.8;
-    }
+    .cta-option a:hover { color: var(--gold-light); }
 
-    /* ========================================
-       Contact Form
-       ======================================== */
+    /* ========== Contact Form ========== */
     .contact-form {
       max-width: 520px;
-      margin: 48px auto 0;
+      margin: 56px auto 0;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .form-group { margin-bottom: 18px; }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 14px 18px;
+      padding: 16px 20px;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
       border-radius: 6px;
       color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 0.95rem;
-      transition: border-color 0.3s;
+      transition: all 0.3s var(--ease);
     }
 
     .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--text-secondary);
-    }
+    .form-group textarea::placeholder { color: var(--text-muted); }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-glow);
     }
 
-    .form-group textarea {
-      height: 140px;
-      resize: vertical;
-    }
+    .form-group textarea { height: 140px; resize: vertical; }
+    .hidden { display: none; }
 
-    .hidden {
-      display: none;
-    }
-
-    /* ========================================
-       Footer
-       ======================================== */
+    /* ========== Footer ========== */
     .footer {
       background: var(--bg-primary);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 40px 0;
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0;
       text-align: center;
     }
 
-    .footer p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
+    .footer p { font-size: 0.8rem; color: var(--text-muted); }
+    .footer a { color: var(--text-muted); transition: color 0.3s; }
+    .footer a:hover { color: var(--gold); }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 14px; }
 
-    .footer a {
-      color: var(--text-secondary);
-      transition: color 0.3s;
-    }
-
-    .footer a:hover {
-      color: var(--gold);
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 12px;
-    }
-
-    /* ========================================
-       Scroll Animations
-       ======================================== */
+    /* ========== Animations ========== */
     .animate {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(40px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
     }
 
-    .animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .animate.visible { opacity: 1; transform: translateY(0); }
     .animate-delay-1 { transition-delay: 0.1s; }
     .animate-delay-2 { transition-delay: 0.2s; }
     .animate-delay-3 { transition-delay: 0.3s; }
     .animate-delay-4 { transition-delay: 0.4s; }
 
-    /* ========================================
-       Responsive
-       ======================================== */
-    @media (max-width: 1024px) {
-      :root {
-        --section-py: 90px;
-      }
+    /* ========== Responsive ========== */
+    @media (min-width: 769px) {
+      .steps-line { display: block; }
+    }
 
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-      }
+    @media (max-width: 1024px) {
+      :root { --section-py: 100px; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+      .steps-line { display: none; }
     }
 
     @media (max-width: 768px) {
-      :root {
-        --section-py: 72px;
-        --section-px: 20px;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
+      :root { --section-py: 80px; --section-px: 20px; }
+      .hamburger { display: flex; }
       .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: var(--bg-primary);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-        transition: right 0.3s ease;
-        border-left: 1px solid rgba(255, 255, 255, 0.06);
+        position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+        background: var(--bg-primary); flex-direction: column; justify-content: center;
+        align-items: center; gap: 36px; transition: right 0.4s var(--ease);
+        border-left: 1px solid var(--border-subtle);
       }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .nav-links a {
-        font-size: 1rem;
-      }
-
+      .nav-links.active { right: 0; }
+      .nav-links a { font-size: 0.9rem; }
       .nav-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
+        display: none; position: fixed; inset: 0;
+        background: rgba(0, 0, 0, 0.6); z-index: -1;
       }
-
-      .nav-overlay.active {
-        display: block;
-      }
-
-      .hero {
-        padding: 100px var(--section-px) 60px;
-        min-height: auto;
-      }
-
-      .hero h1 {
-        font-size: clamp(2rem, 8vw, 2.8rem);
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-      }
-
-      .pain-points {
-        grid-template-columns: 1fr;
-      }
-
-      .approach-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .whom-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .pricing-cards {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-header {
-        margin-bottom: 40px;
-      }
-
-      .cta-options {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-      }
+      .nav-overlay.active { display: block; }
+      .hero { padding: 120px var(--section-px) 80px; min-height: auto; }
+      .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-watermark { font-size: 10rem; }
+      .hero-scroll-hint { display: none; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .hero-buttons .btn { width: 100%; max-width: 320px; text-align: center; }
+      .pain-points, .approach-cards, .whom-cards, .testimonials-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 48px; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 440px; }
+      .section-header { margin-bottom: 48px; }
+      .cta-options { flex-direction: column; align-items: center; gap: 28px; }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .pricing-card {
-        padding: 36px 24px;
-      }
+      .hero h1 { font-size: 1.8rem; }
+      .pricing-card { padding: 40px 28px; }
+      .approach-card { padding: 36px 28px; }
     }
   </style>
 </head>
@@ -953,9 +1036,7 @@
         <a href="#cta">Contact</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-overlay" id="navOverlay"></div>
@@ -963,16 +1044,19 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
+    <div class="hero-watermark">日本語</div>
     <div class="hero-content">
       <span class="tag">1-on-1 Online Japanese Coaching</span>
-      <h1>Master Business Japanese.<br>From N3 to N1 — <span>fast.</span></h1>
+      <h1>Master Business Japanese.<br>From N3 to N1 — <span class="gold italic">fast.</span></h1>
       <p class="hero-sub">A premium coaching program combining weekly lessons, structured coaching sessions, and daily support — designed for working adults who want real results in a short time.</p>
       <div class="hero-buttons">
-        <!-- REPLACE href WITH REAL BOOKING LINK -->
         <a href="#cta" class="btn btn--primary">Book Free Coaching Session</a>
-        <!-- REPLACE href WITH REAL WHATSAPP NUMBER: https://wa.me/60XXXXXXXXX -->
         <a href="https://wa.me/60XXXXXXXXX" class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="arrow"></div>
     </div>
   </section>
 
@@ -980,24 +1064,34 @@
   <section class="section section--alt" id="problem">
     <div class="container">
       <div class="section-header animate">
-        <h2>Why most Japanese learners don't progress</h2>
-        <p class="section-sub">You've been studying for years — but still feel stuck. Group classes move too slowly. Self-study lacks structure. You don't get feedback when it matters most.</p>
+        <span class="tag">The Challenge</span>
+        <h2>Why most Japanese learners<br>don't progress</h2>
+        <div class="divider"><div class="divider-diamond"></div></div>
       </div>
-      <div class="pain-points problem-content">
+      <p class="problem-body animate">You've been studying for years — but still feel stuck. Group classes move too slowly. Self-study lacks structure. You don't get feedback when it matters most.</p>
+      <div class="pain-points">
         <div class="pain-point animate animate-delay-1">
-          <div class="pain-point-icon">&mdash;</div>
+          <div class="pain-point-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
           <p>Group lessons can't address your specific weak points</p>
         </div>
         <div class="pain-point animate animate-delay-2">
-          <div class="pain-point-icon">&mdash;</div>
+          <div class="pain-point-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
           <p>No one holds you accountable between classes</p>
         </div>
         <div class="pain-point animate animate-delay-3">
-          <div class="pain-point-icon">&mdash;</div>
+          <div class="pain-point-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
           <p>Study plans don't adapt when life gets busy</p>
         </div>
         <div class="pain-point animate animate-delay-4">
-          <div class="pain-point-icon">&mdash;</div>
+          <div class="pain-point-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
           <p>Business Japanese and JLPT N1/N2 require a different approach</p>
         </div>
       </div>
@@ -1008,21 +1102,32 @@
   <section class="section" id="approach">
     <div class="container">
       <div class="section-header animate">
-        <h2>Coaching + lessons. A system that actually works.</h2>
-        <p class="section-sub">MTM combines structured lessons with weekly coaching — a combination not found at typical language schools. Every week is purposeful, every session moves you forward.</p>
+        <span class="tag">Our Approach</span>
+        <h2>Coaching + lessons.<br>A system that actually works.</h2>
+        <div class="divider"><div class="divider-diamond"></div></div>
+        <p class="section-sub" style="margin-top:20px;">MTM combines structured lessons with weekly coaching — a combination not found at typical language schools. Every week is purposeful, every session moves you forward.</p>
       </div>
       <div class="approach-cards">
         <div class="approach-card animate animate-delay-1">
+          <div class="approach-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
           <div class="approach-card-label">60 min &middot; 1-on-1</div>
           <h3>Lessons</h3>
           <p>Focus only on what you need. No waiting for other students. Every minute is dedicated to your growth.</p>
         </div>
         <div class="approach-card animate animate-delay-2">
+          <div class="approach-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          </div>
           <div class="approach-card-label">30 min &middot; Weekly</div>
           <h3>Coaching</h3>
           <p>Review progress, adjust your plan, clear blockers before they slow you down.</p>
         </div>
         <div class="approach-card animate animate-delay-3">
+          <div class="approach-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
           <div class="approach-card-label">Chat &middot; Every Day</div>
           <h3>Daily Support</h3>
           <p>Ask questions, get feedback, stay on track between sessions. Learning doesn't stop after class.</p>
@@ -1035,23 +1140,37 @@
   <section class="section section--alt" id="for-whom">
     <div class="container">
       <div class="section-header animate">
+        <span class="tag">Who It's For</span>
         <h2>Built for serious learners</h2>
-        <p class="section-sub">MTM is designed for working adults with a foundation in Japanese who are ready to commit to real progress.</p>
+        <div class="divider"><div class="divider-diamond"></div></div>
+        <p class="section-sub" style="margin-top:20px;">MTM is designed for working adults with a foundation in Japanese who are ready to commit to real progress.</p>
       </div>
       <div class="whom-cards">
         <div class="whom-card animate animate-delay-1">
+          <div class="whom-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+          </div>
           <h3>JLPT N2/N1 Prep</h3>
           <p>Targeted prep with a structured plan adapted to your exam date.</p>
         </div>
         <div class="whom-card animate animate-delay-2">
+          <div class="whom-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
           <h3>Business Japanese</h3>
           <p>Emails, meetings, keigo — practical skills for your career.</p>
         </div>
         <div class="whom-card animate animate-delay-3">
+          <div class="whom-card-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <h3>Short-term Intensive</h3>
           <p>Need rapid improvement before a job change or relocation? We build a sprint plan.</p>
         </div>
         <div class="whom-card animate animate-delay-4">
+          <div class="whom-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <h3>Flexible Schedule</h3>
           <p>Evenings and weekends. 100% online. No commute.</p>
         </div>
@@ -1064,28 +1183,33 @@
   <section class="section" id="how-it-works">
     <div class="container">
       <div class="section-header animate">
+        <span class="tag">How It Works</span>
         <h2>Your weekly rhythm</h2>
+        <div class="divider"><div class="divider-diamond"></div></div>
       </div>
-      <div class="steps">
-        <div class="step animate animate-delay-1">
-          <div class="step-number">1</div>
-          <h3>Free Coaching Session</h3>
-          <p>We assess your level, understand your goals, and design your personal study plan — before you commit.</p>
-        </div>
-        <div class="step animate animate-delay-2">
-          <div class="step-number">2</div>
-          <h3>Weekly 60-min Lesson</h3>
-          <p>Deep focus on your priority areas: grammar, vocabulary, reading, or speaking — based on your plan.</p>
-        </div>
-        <div class="step animate animate-delay-3">
-          <div class="step-number">3</div>
-          <h3>Weekly 30-min Coaching</h3>
-          <p>Review what worked, adjust what didn't. Keep momentum. Stay accountable.</p>
-        </div>
-        <div class="step animate animate-delay-4">
-          <div class="step-number">4</div>
-          <h3>Daily Chat Support</h3>
-          <p>Questions don't wait for the next lesson. Get answers when you need them.</p>
+      <div class="steps-container">
+        <div class="steps-line"></div>
+        <div class="steps">
+          <div class="step animate animate-delay-1">
+            <div class="step-number">1</div>
+            <h3>Free Coaching Session</h3>
+            <p>We assess your level, understand your goals, and design your personal study plan — before you commit.</p>
+          </div>
+          <div class="step animate animate-delay-2">
+            <div class="step-number">2</div>
+            <h3>Weekly 60-min Lesson</h3>
+            <p>Deep focus on your priority areas: grammar, vocabulary, reading, or speaking — based on your plan.</p>
+          </div>
+          <div class="step animate animate-delay-3">
+            <div class="step-number">3</div>
+            <h3>Weekly 30-min Coaching</h3>
+            <p>Review what worked, adjust what didn't. Keep momentum. Stay accountable.</p>
+          </div>
+          <div class="step animate animate-delay-4">
+            <div class="step-number">4</div>
+            <h3>Daily Chat Support</h3>
+            <p>Questions don't wait for the next lesson. Get answers when you need them.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1095,10 +1219,11 @@
   <section class="section section--alt" id="pricing">
     <div class="container">
       <div class="section-header animate">
+        <span class="tag">Pricing</span>
         <h2>Two plans. One system.</h2>
+        <div class="divider"><div class="divider-diamond"></div></div>
       </div>
       <div class="pricing-cards">
-        <!-- Plan A -->
         <div class="pricing-card animate animate-delay-1">
           <div class="pricing-label">Plan A &mdash; 3 Months</div>
           <div class="pricing-title">Short-Term Intensive</div>
@@ -1109,15 +1234,15 @@
           </div>
           <p class="pricing-monthly">RM 1,000 per month</p>
           <div class="pricing-spacer"></div>
+          <div class="pricing-divider"></div>
           <ul class="pricing-features">
-            <li>4&times; 60-min lessons / month</li>
-            <li>4&times; 30-min coaching / month</li>
-            <li>Daily chat support</li>
-            <li>Personal study plan</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4&times; 60-min lessons / month</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4&times; 30-min coaching / month</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Daily chat support</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Personal study plan</li>
           </ul>
           <a href="#cta" class="btn btn--secondary">Get Started</a>
         </div>
-        <!-- Plan B (Featured) -->
         <div class="pricing-card featured animate animate-delay-2">
           <div class="pricing-badge">Most Popular</div>
           <div class="pricing-label">Plan B &mdash; 6 Months</div>
@@ -1129,11 +1254,12 @@
           </div>
           <p class="pricing-monthly">RM 800 per month</p>
           <p class="pricing-save">Save RM 1,200 vs monthly rate</p>
+          <div class="pricing-divider"></div>
           <ul class="pricing-features">
-            <li>4&times; 60-min lessons / month</li>
-            <li>4&times; 30-min coaching / month</li>
-            <li>Daily chat support</li>
-            <li>Personal study plan</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4&times; 60-min lessons / month</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4&times; 30-min coaching / month</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Daily chat support</li>
+            <li><span class="pricing-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Personal study plan</li>
           </ul>
           <a href="#cta" class="btn btn--primary">Get Started</a>
         </div>
@@ -1145,20 +1271,61 @@
   <section class="section" id="testimonials">
     <div class="container">
       <div class="section-header animate">
+        <span class="tag">Testimonials</span>
         <h2>What our students say</h2>
+        <div class="divider"><div class="divider-diamond"></div></div>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial animate animate-delay-1">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
           <p class="testimonial-quote">I had been stuck at N3 for two years. With MTM's coaching system, I passed N2 in just three months. The weekly check-ins kept me accountable in a way no classroom ever did.</p>
-          <p class="testimonial-author"><strong>Amirah, 29</strong> &mdash; Passed JLPT N2</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Amirah, 29</div>
+              <div class="testimonial-role">Passed JLPT N2</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial animate animate-delay-2">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
           <p class="testimonial-quote">Business emails in Japanese used to terrify me. After three months with MTM, I can write keigo confidently and my Japanese colleagues have noticed the difference.</p>
-          <p class="testimonial-author"><strong>Wei Liang, 34</strong> &mdash; Business Japanese</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">W</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Wei Liang, 34</div>
+              <div class="testimonial-role">Business Japanese</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial animate animate-delay-3">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
           <p class="testimonial-quote">The daily chat support is what sets MTM apart. I could ask questions the moment I got confused — not wait until the next lesson. That alone accelerated my progress significantly.</p>
-          <p class="testimonial-author"><strong>Priya, 26</strong> &mdash; N1 Candidate</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">P</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Priya, 26</div>
+              <div class="testimonial-role">N1 Candidate</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1168,24 +1335,21 @@
   <section class="section section--alt cta-section" id="cta">
     <div class="container">
       <div class="animate">
+        <span class="tag">Get Started</span>
         <h2>Start with a free coaching session</h2>
-        <p class="section-sub" style="margin: 0 auto 40px;">We assess your current level, understand your goals, and design a study plan — at no cost, no obligation. If it's a good fit, we move forward together.</p>
-        <!-- REPLACE href WITH REAL BOOKING LINK -->
+        <p class="section-sub">We assess your current level, understand your goals, and design a study plan — at no cost, no obligation. If it's a good fit, we move forward together.</p>
         <a href="#contact-form" class="btn btn--primary">Book Free Session</a>
       </div>
       <div class="cta-options animate">
         <div class="cta-option">
           <p class="cta-option-label">WhatsApp</p>
-          <!-- REPLACE WITH REAL WHATSAPP NUMBER -->
           <a href="https://wa.me/60XXXXXXXXX" target="_blank" rel="noopener">+60 XX-XXXX XXXX</a>
         </div>
         <div class="cta-option">
           <p class="cta-option-label">Email</p>
-          <!-- REPLACE WITH REAL EMAIL -->
           <a href="mailto:contact@mtmnihongo.com">contact@mtmnihongo.com</a>
         </div>
       </div>
-      <!-- Contact Form -->
       <form class="contact-form animate" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -1214,14 +1378,21 @@
   <script>
     // Sticky Navigation
     const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
     });
 
-    // Mobile Hamburger Menu
+    // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const navOverlay = document.getElementById('navOverlay');
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      navOverlay.classList.remove('active');
+    }
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -1229,19 +1400,8 @@
       navOverlay.classList.toggle('active');
     });
 
-    navOverlay.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-      navOverlay.classList.remove('active');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        navOverlay.classList.remove('active');
-      });
-    });
+    navOverlay.addEventListener('click', closeMenu);
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
     // Scroll Animations
     const observer = new IntersectionObserver((entries) => {
@@ -1251,11 +1411,9 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.animate').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
   </script>
 
 </body>
