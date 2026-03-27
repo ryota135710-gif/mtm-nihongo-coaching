@@ -408,6 +408,17 @@
             overflow: hidden;
         }
 
+        .hero-bg-photo {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -986,8 +997,10 @@
 
         .instructors-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 28px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .instructor-card {
@@ -2034,7 +2047,7 @@
                 color: var(--text-muted);
             }
             .comparison-main td:nth-child(2)::after {
-                content: ' / Self-Study: ✕';
+                content: '';
                 color: var(--text-muted);
             }
             /* Row 3: MTM highlight - the star */
@@ -2187,7 +2200,7 @@
          HERO
          ============================================ -->
     <section class="hero" id="home">
-        <div class="hero-watermark" aria-hidden="true">道</div>
+        <div class="hero-bg-photo" aria-hidden="true"></div>
         <div class="hero-inner">
             <div class="hero-content fade-in">
                 <div class="hero-badge">
@@ -2390,7 +2403,6 @@
                     <tr>
                         <th>Feature</th>
                         <th>Traditional Language School</th>
-                        <th>Self-Study</th>
                         <th class="highlight-col">◆ MTM Nihongo</th>
                     </tr>
                 </thead>
@@ -2398,43 +2410,36 @@
                     <tr>
                         <td>Format</td>
                         <td>Group class (5-15 students)</td>
-                        <td><span class="check-no">✕</span></td>
                         <td class="highlight-col"><span class="check-gold">✔ 1-on-1 private</span></td>
                     </tr>
                     <tr>
                         <td>Lesson + Coaching</td>
                         <td>Weekly group lesson only</td>
-                        <td><span class="check-no">✕</span></td>
                         <td class="highlight-col"><span class="check-gold">✔ Weekly 1-on-1 lesson + weekly coaching</span></td>
                     </tr>
                     <tr>
                         <td>Curriculum</td>
                         <td>Same curriculum for everyone</td>
-                        <td><span class="check-no">✕</span></td>
                         <td class="highlight-col"><span class="check-gold">✔ 100% personalized curriculum</span></td>
                     </tr>
                     <tr>
                         <td>Support between classes</td>
                         <td>No support between classes</td>
-                        <td><span class="check-no">✕</span></td>
                         <td class="highlight-col"><span class="check-gold">✔ Daily chat support 7 days/week</span></td>
                     </tr>
                     <tr>
                         <td>Study Plan</td>
                         <td>You manage your own study plan</td>
-                        <td>Self-managed</td>
                         <td class="highlight-col"><span class="check-gold">✔ Custom study plan designed for you</span></td>
                     </tr>
                     <tr>
                         <td>Accountability</td>
                         <td>No accountability system</td>
-                        <td><span class="check-no">✕</span></td>
                         <td class="highlight-col"><span class="check-gold">✔ Weekly progress tracking & adjustment</span></td>
                     </tr>
                     <tr>
                         <td>Overall Approach</td>
                         <td>Teacher teaches, that's it</td>
-                        <td>Limited</td>
                         <td class="highlight-col"><span class="check-gold">✔ Teaching + Coaching + Daily mentoring</span></td>
                     </tr>
                 </tbody>
@@ -2457,44 +2462,23 @@
             </div>
             <div class="instructors-grid">
                 <div class="instructor-card fade-in">
-                    <div class="instructor-avatar">日</div>
-                    <h4>Native Japanese Instructors</h4>
-                    <span class="instructor-role">Native Speaker · Business Japanese Expert</span>
-                    <p class="instructor-bio">Our Japanese instructors bring years of real-world business experience in Japan.
-                        They understand the nuances of keigo, business email writing, meeting etiquette,
-                        and the cultural context that textbooks can't teach. With native-level pronunciation
-                        and natural expression guidance, you'll learn Japanese the way it's actually spoken
-                        in professional settings.</p>
+                    <h4>The Native Japanese</h4>
+                    <p class="instructor-bio">Based in Malaysia for 6 years with firsthand understanding of the local workplace and cultural gaps within Japanese subsidiaries. A recruitment expert with 5 years of coaching experience, he knows exactly what Japanese managers look for in top candidates.</p>
+                    <p class="instructor-bio">He specializes in the "unwritten rules" of business Japanese—from Keigo nuances to professional email etiquette. He provides practical communication strategies to help you build trust with Japanese management and secure the senior roles and language allowances you deserve.</p>
                     <div class="instructor-tags">
-                        <span class="instructor-tag">Native Pronunciation</span>
                         <span class="instructor-tag">Business Japanese</span>
-                        <span class="instructor-tag">Cultural Context</span>
+                        <span class="instructor-tag">Cultural Nuance</span>
+                        <span class="instructor-tag">Native Fluency</span>
                     </div>
                 </div>
                 <div class="instructor-card fade-in fade-in-delay-1">
-                    <div class="instructor-avatar">N1</div>
-                    <h4>JLPT N1 Malaysian Instructors</h4>
-                    <span class="instructor-role">JLPT N1 Certified · Malaysian Context Expert</span>
-                    <p class="instructor-bio">All of our Malaysian instructors hold the highest level of Japanese Language
-                        Proficiency — JLPT N1. Having gone through the same journey as our students,
-                        they understand the unique challenges Malaysian learners face. They can explain
-                        complex grammar in Malay or English, bridge cultural gaps, and share proven
-                        study strategies that worked for them personally.</p>
+                    <h4>The Native Malaysian (N1)</h4>
+                    <p class="instructor-bio">Mastered JLPT N1 from scratch—without ever studying in Japan. With 5 years as a professional instructor and coach, she has helped numerous Malaysian students break through the intermediate plateau. She knows the exact struggles you face firsthand.</p>
+                    <p class="instructor-bio">She identifies the common grammar pitfalls and pronunciation habits unique to Malaysian speakers, providing clear explanations in English, Malay, or Chinese. She doesn't just teach Japanese; she shows you the proven roadmap to reach the top.</p>
                     <div class="instructor-tags">
                         <span class="instructor-tag">N1 Certified</span>
                         <span class="instructor-tag">Bilingual Support</span>
                         <span class="instructor-tag">JLPT Strategy</span>
-                    </div>
-                </div>
-                <div class="instructor-card fade-in fade-in-delay-2">
-                    <div class="instructor-avatar">極</div>
-                    <h4>"Every instructor is carefully selected."</h4>
-                    <span class="instructor-role">Our Promise to You</span>
-                    <p class="instructor-bio">We never compromise on quality. Every instructor goes through a rigorous selection process — only those with proven teaching ability, deep Japanese knowledge, and the ability to connect with Malaysian learners make it onto our team.</p>
-                    <div class="instructor-tags">
-                        <span class="instructor-tag">Carefully Selected</span>
-                        <span class="instructor-tag">Quality Assured</span>
-                        <span class="instructor-tag">Malaysian Focused</span>
                     </div>
                 </div>
             </div>
@@ -2556,6 +2540,26 @@
                     <p>Dedicated mock exam sessions, time management strategies, and targeted JLPT preparation.</p>
                 </div>
             </div>
+                <div class="service-item fade-in">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Personal Career Mentoring</h4>
+                    <p>Beyond the language. Get expert advice on your CV, interview prep, and salary negotiation strategies to secure senior roles in Japanese companies.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-1">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                    <h4>Real-Business Email & Document Review</h4>
+                    <p>Don't just study "sample" emails. Submit your actual work drafts and get professional feedback to ensure your communication with Japanese bosses is flawless and respectful.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-2">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Access to Exclusive Networking / Community</h4>
+                    <p>Join a community of high-achieving Malaysian professionals. Share insights, industry tips, and stay motivated with peers who are also conquering the N1/N2 plateau.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-3">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8"/><path d="M8 14h4"/></svg></span>
+                    <h4>Role-Play Practice for Real Meetings</h4>
+                    <p>Don't just memorize phrases—practice them in action. We simulate your actual workplace scenarios, from high-stakes meetings to client negotiations, so you can speak with confidence and authority.</p>
+                </div>
         </div>
     </section>
 
@@ -3007,25 +3011,6 @@
             }
         }, { passive: true });
 
-        /* ============================================
-           HAMBURGER MENU
-           ============================================ */
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-
-        document.querySelectorAll('.mobile-link, .mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
 
         /* ============================================
            INTERSECTION OBSERVER — FADE IN
