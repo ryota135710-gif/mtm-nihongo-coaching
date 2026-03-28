@@ -1,67 +1,3069 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MTM Nihongo Coaching — Coming Soon</title>
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #111111;
-      color: #E8E4DC;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .container {
-      max-width: 560px;
-    }
-    .tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #C9A84C;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    h1 span { color: #C9A84C; }
-    p {
-      color: #a09a90;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      margin-bottom: 32px;
-    }
-    .line {
-      width: 48px;
-      height: 1px;
-      background: #C9A84C;
-      margin: 0 auto;
-      opacity: 0.5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTM Nihongo Coaching — Premium 1-on-1 Japanese Language Coaching</title>
+    <meta name="description" content="Get your own tailored trainer for Japanese. Premium 1-on-1 coaching combining dedicated coaches and expert instructors. Based in Malaysia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: #1B3A2D;
+            color: #F5F0E8;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+        ul, ol { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+        /* ============================================
+           CSS VARIABLES
+           ============================================ */
+        :root {
+            --bg-primary: #1B3A2D;
+            --bg-secondary: #142D22;
+            --bg-card: #213D2F;
+            --text-primary: #F5F0E8;
+            --text-secondary: #A8B5A2;
+            --text-muted: #6B7A66;
+            --gold: #D4A04A;
+            --gold-light: #E0B858;
+            --gold-dim: rgba(212, 160, 74, 0.12);
+            --red: #C44536;
+            --border-subtle: rgba(212, 160, 74, 0.15);
+            --border-card: rgba(212, 160, 74, 0.1);
+        }
+
+        /* ============================================
+           BAMBOO GRID TEXTURE BACKGROUND
+           ============================================ */
+        .bamboo-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ============================================
+           SECTION DIVIDER
+           ============================================ */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 0 auto 56px;
+            max-width: 320px;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.5;
+        }
+        .section-divider-diamond {
+            color: var(--gold);
+            font-size: 10px;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        /* ============================================
+           SECTION LABELS
+           ============================================ */
+        .section-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .display-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .section-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: #1B3A2D;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 14px 32px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: rgba(255,255,255,0.15);
+            transition: left 0.4s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            color: #1B3A2D;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(212, 160, 74, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--gold);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 13px 32px;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold-dim);
+            color: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        /* ============================================
+           NAVBAR
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(20, 45, 34, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 14px 0;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        .brand-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            font-weight: 300;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-links a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: #1B3A2D !important;
+            font-weight: 600 !important;
+            padding: 9px 22px;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            box-shadow: 0 4px 20px rgba(212,160,74,0.4);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(20, 45, 34, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .hero-bg-photo {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.025) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Radial gold glow */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(ellipse at center, rgba(212, 160, 74, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Large 道 watermark */
+        .hero-watermark {
+            position: absolute;
+            right: -2%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(200px, 28vw, 420px);
+            font-weight: 300;
+            color: rgba(212, 160, 74, 0.055);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px 100px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {}
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-subtle);
+            padding: 8px 18px;
+            margin-bottom: 32px;
+            background: var(--gold-dim);
+        }
+
+        .hero-badge span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .hero-badge .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-sub-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 28px;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 44px;
+            max-width: 500px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-trust-item .trust-icon {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .hero-trust-item span {
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .hero-trust-sep {
+            width: 1px;
+            height: 20px;
+            background: var(--border-subtle);
+        }
+
+        /* Hero right panel */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 28px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.6;
+        }
+
+        .hero-card-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-card-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .hero-card-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .hero-card-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ============================================
+           STATS BAR
+           ============================================ */
+        .stats-bar {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 48px 0;
+        }
+
+        .stats-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 16px 32px;
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 20%; bottom: 20%;
+            width: 1px;
+            background: var(--border-subtle);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            letter-spacing: 0.04em;
+        }
+
+        .stat-number-text {
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+        }
+
+        .stat-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ============================================
+           PAIN POINTS
+           ============================================ */
+        .pain-section {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .pain-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .pain-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 40px;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pain-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pain-card:hover {
+            border-color: rgba(212, 160, 74, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .pain-icon {
+            width: 52px;
+            height: 52px;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 24px;
+            background: var(--gold-dim);
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover .pain-icon {
+            border-color: var(--gold);
+            background: rgba(212, 160, 74, 0.2);
+        }
+
+        .pain-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            letter-spacing: 0.02em;
+        }
+
+        .pain-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .pain-card .pain-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-card);
+            letter-spacing: 0.1em;
+        }
+
+        /* ============================================
+           WHY CHOOSE US
+           ============================================ */
+        .why-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .why-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-card);
+            transition: all 0.4s ease;
+            background: var(--bg-card);
+        }
+
+        .why-card:hover {
+            border-color: rgba(212, 160, 74, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+        }
+
+        .why-img-wrap {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .why-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.6) saturate(0.7);
+        }
+
+        .why-card:hover .why-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .why-img-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60%;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+        }
+
+        .why-img-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: rgba(212, 160, 74, 0.4);
+            line-height: 1;
+        }
+
+        .why-content {
+            padding: 32px;
+            position: relative;
+        }
+
+        .why-content::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 32px; right: 32px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0.3;
+        }
+
+        .why-content h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .why-content .why-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .why-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           COMPARISON TABLE
+           ============================================ */
+        .comparison-section {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .comparison-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .comparison-table th {
+            padding: 20px 28px;
+            text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .comparison-table th.highlight-col {
+            background: var(--gold-dim);
+            border-bottom: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .comparison-table td {
+            padding: 18px 28px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(212, 160, 74, 0.06);
+            vertical-align: middle;
+        }
+
+        .comparison-table td.highlight-col {
+            background: rgba(212, 160, 74, 0.04);
+            color: var(--text-primary);
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(212, 160, 74, 0.03);
+        }
+
+        .comparison-table tr:hover td.highlight-col {
+            background: rgba(212, 160, 74, 0.08);
+        }
+
+        .check-gold {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        .check-no {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* ============================================
+           INSTRUCTORS
+           ============================================ */
+        .instructors-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .instructors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .instructor-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 40px;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .instructor-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .instructor-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .instructor-card:hover {
+            border-color: rgba(212, 160, 74, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .instructor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gold-dim);
+            border: 2px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .instructor-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .instructor-role {
+            font-size: 12px;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .instructor-bio {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .instructor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .instructor-tag {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            padding: 4px 12px;
+            border: 1px solid var(--border-subtle);
+            background: var(--gold-dim);
+        }
+
+        /* ============================================
+           SERVICE HIGHLIGHTS
+           ============================================ */
+        .service-section {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .service-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 36px 28px;
+            position: relative;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-item:hover {
+            border-color: rgba(212, 160, 74, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .service-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           HOW IT WORKS
+           ============================================ */
+        .how-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 0 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 72px;
+            height: 72px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin: 0 auto 28px;
+            background: var(--bg-secondary);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .step-item:hover .step-number {
+            background: var(--gold-dim);
+            box-shadow: 0 0 32px rgba(212, 160, 74, 0.3);
+        }
+
+        .step-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .step-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* ============================================
+           PRICING
+           ============================================ */
+        .pricing-section {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .pricing-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 48px 40px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(212, 160, 74, 0.4);
+            box-shadow:
+                0 0 0 1px rgba(212, 160, 74, 0.15),
+                0 20px 80px rgba(212, 160, 74, 0.12),
+                0 0 80px rgba(212, 160, 74, 0.06);
+        }
+
+        .pricing-card.featured::before {
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.8;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #1B3A2D;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 20px;
+        }
+
+        .pricing-plan-name {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 28px;
+        }
+
+        .price-main {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+
+        .price-currency {
+            font-size: 20px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 5vw, 4rem);
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .price-breakdown {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .price-per-day {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 500;
+            padding: 6px 12px;
+            background: var(--gold-dim);
+            border: 1px solid var(--border-subtle);
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 36px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 160, 74, 0.06);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li .feat-icon {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Competitor table */
+        .competitor-table-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .competitor-table-wrap h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+           ============================================ */
+        .testimonials-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 40px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(212, 160, 74, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
+            font-size: 48px;
+            color: rgba(212, 160, 74, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-card);
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold-dim);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .author-info h5 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .author-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-stars span {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        /* ============================================
+           FAQ
+           ============================================ */
+        .faq-section {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-card);
+            margin-bottom: 12px;
+            transition: border-color 0.3s ease;
+            background: var(--bg-card);
+        }
+
+        .faq-item.active {
+            border-color: rgba(212, 160, 74, 0.3);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            padding-right: 20px;
+            line-height: 1.5;
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            background: var(--gold-dim);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: var(--gold);
+            color: #1B3A2D;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 0 28px 28px;
+        }
+
+        .faq-answer p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-card);
+        }
+
+        /* ============================================
+           FINAL CTA
+           ============================================ */
+        .cta-section {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 160, 74, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 74, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        /* Glow effect */
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(212, 160, 74, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-watermark {
+            position: absolute;
+            left: -2%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(160px, 22vw, 340px);
+            font-weight: 300;
+            color: rgba(212, 160, 74, 0.04);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .cta-content h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .cta-content p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 15px;
+            background: var(--gold-dim);
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+
+        /* CTA Form */
+        .cta-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 44px 40px;
+            position: relative;
+        }
+
+        .cta-form::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            padding: 13px 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            -webkit-appearance: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 160, 74, 0.08);
+        }
+
+        .form-group select option {
+            background: var(--bg-card);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--gold);
+            color: #1B3A2D;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: var(--gold-light);
+            box-shadow: 0 8px 32px rgba(212, 160, 74, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            padding: 64px 0 32px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .footer-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .footer-brand-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .footer-col h5 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-col ul li a::before {
+            content: '◆';
+            font-size: 6px;
+            color: var(--gold);
+            opacity: 0.4;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer-copy a {
+            color: var(--gold);
+            opacity: 0.8;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            font-size: 12px;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           ANIMATION CLASSES
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           RESPONSIVE — TABLET
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-visual { display: none; }
+            .hero-cta-row { justify-content: center; }
+            .hero-trust { justify-content: center; }
+            .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2)::after { display: none; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .instructors-grid { grid-template-columns: 1fr 1fr; }
+            .service-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+            .steps-grid::before { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .cta-inner { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ============================================
+           RESPONSIVE — MOBILE
+           ============================================ */
+        @media (max-width: 768px) {
+            .navbar-inner { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .container { padding: 0 24px; }
+            .hero-inner { padding: 100px 24px 80px; }
+            .pain-section,
+            .why-section,
+            .comparison-section,
+            .instructors-section,
+            .service-section,
+            .how-section,
+            .pricing-section,
+            .testimonials-section,
+            .faq-section,
+            .cta-section { padding: 80px 0; }
+            .stats-bar-inner { grid-template-columns: repeat(2, 1fr); padding: 0 24px; }
+            .stat-item { padding: 16px; }
+            .stat-item::after { display: none !important; }
+            .stats-bar { padding: 36px 0; }
+            .instructors-grid { grid-template-columns: 1fr; }
+            .service-grid { grid-template-columns: 1fr 1fr; }
+            /* === Comparison table: 案1 compact card === */
+            .comparison-table { display: block; }
+            .comparison-table thead { display: none; }
+            .comparison-table tbody { display: block; }
+            .comparison-table tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 14px;
+                border: 1px solid var(--border-subtle);
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            /* Row 1: Feature name */
+            .comparison-table td:first-child {
+                background: var(--bg-card);
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text-primary);
+                padding: 12px 16px 10px;
+                border-bottom: 1px solid rgba(212,160,74,0.1);
+            }
+            /* Row 2: Competitors in one compact line */
+            .comparison-table td:nth-child(2),
+            .comparison-table td:nth-child(3) {
+                display: none;
+            }
+            .comparison-table td:nth-child(2) {
+                display: block;
+                padding: 8px 16px;
+                font-size: 12px;
+                color: var(--text-muted);
+                background: var(--bg-primary);
+                border-bottom: none;
+            }
+            .comparison-main td:nth-child(2)::before {
+                content: 'Others: ';
+                font-weight: 600;
+                color: var(--text-muted);
+            }
+            .comparison-main td:nth-child(2)::after {
+                content: '';
+                color: var(--text-muted);
+            }
+            /* Row 3: MTM highlight - the star */
+            .comparison-table td.highlight-col {
+                background: rgba(212,160,74,0.1);
+                padding: 12px 16px;
+                font-size: 14px;
+                border-top: 1px solid rgba(212,160,74,0.15);
+            }
+            .comparison-table td.highlight-col .check-gold {
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .comparison-main td.highlight-col::before {
+                content: '◆ MTM NIHONGO';
+                display: block;
+                font-size: 9px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                color: var(--gold);
+                margin-bottom: 4px;
+                opacity: 0.8;
+            }
+            /* Competitor table variant */
+            .competitor-table-wrap .comparison-table td:nth-child(2)::before {
+                content: 'Others: ';
+                font-weight: 600;
+            }
+            .competitor-table-wrap .comparison-table td:nth-child(2)::after {
+                content: '';
+            }
+            .competitor-table-wrap .comparison-table td.highlight-col::before {
+                content: '◆ MTM NIHONGO';
+                display: block;
+                font-size: 9px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                color: var(--gold);
+                margin-bottom: 4px;
+                opacity: 0.8;
+            }
+            .comparison-table tr:hover td,
+            .comparison-table tr:hover td.highlight-col {
+                background: inherit;
+            }
+            .comparison-table tr:hover td.highlight-col {
+                background: rgba(212,160,74,0.1);
+            }
+            .cta-inner { gap: 48px; }
+            .cta-form { padding: 32px 24px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-inner { padding: 0 24px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .service-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .pain-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           HERO IMAGE PANEL
+           ============================================ */
+        .hero-image-panel {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(212,160,74,0.25);
+        }
+        .hero-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.55;
+            transition: opacity 0.6s ease;
+        }
+        .hero-image-panel:hover .hero-bg-img {
+            opacity: 0.7;
+        }
+        .hero-img-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(27,58,45,0.85) 0%, transparent 60%);
+        }
+        .hero-img-quote {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .hero-img-kanji {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem;
+            color: #D4A04A;
+            letter-spacing: 0.15em;
+        }
+        .hero-img-trans {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: rgba(245,240,232,0.7);
+            font-style: italic;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============================================
+           SVG ICON SIZING
+           ============================================ */
+        .pain-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #D4A04A;
+            stroke: #D4A04A;
+        }
+        .service-icon svg {
+            width: 22px;
+            height: 22px;
+            color: #D4A04A;
+            stroke: #D4A04A;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <p class="tag">1-on-1 Online Japanese Coaching</p>
-    <h1>MTM Nihongo Coaching<br>is <span>coming soon.</span></h1>
-    <p>A premium coaching program for Malaysian working adults. We're putting the finishing touches on something special.</p>
-    <div class="line"></div>
-  </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-brand">
+                <img src="MTM%20NIHONGO%20COACHING%20(2).png" alt="MTM Nihongo Coaching Logo">
+                <div class="brand-text">
+                    <span class="brand-name">MTM Nihongo Coaching</span>
+                    <span class="brand-jp">日本語コーチング</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener" class="nav-cta">Start Now</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="hero" id="home">
+        <div class="hero-bg-photo" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">
+                    <div class="badge-dot"></div>
+                    <span>For JLPT N3+ Learners in Malaysia</span>
+                </div>
+                <h1>Get Your Own <em>Tailored Trainer</em><br>for Japanese</h1>
+
+                <p class="hero-desc">
+                    You've already built a foundation. Now it's time to break through the plateau.
+                    Whether you're pushing from N3 to N2, conquering N1, or mastering business Japanese
+                    for your career — our dual Coaching + Lesson system is designed to get you there.
+                    Stop studying alone. Start progressing with a system built for intermediate and advanced learners.
+                </p>
+                <div class="hero-cta-row">
+                    <a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener" class="btn-primary">
+                        Book Free Consultation ◆
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in fade-in-delay-2">
+                <div class="hero-image-panel">
+                    <img
+                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&q=80"
+                        alt="1-on-1 private Japanese lesson coaching"
+                        class="hero-bg-img"
+                    >
+                    <div class="hero-img-overlay">
+                        <div class="hero-img-quote">
+                            <span class="hero-img-kanji">継続は力なり</span>
+                            <span class="hero-img-trans">Persistence is power.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         STATS BAR
+         ============================================ -->
+    <section class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="stat-item fade-in">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Fully personalized curriculum</div>
+            </div>
+            <div class="stat-item fade-in fade-in-delay-1">
+                <span class="stat-number stat-number-text">Native level</span>
+                <div class="stat-label">All instructors are JLPT N1 or Native</div>
+            </div>
+            <div class="stat-item fade-in fade-in-delay-2">
+                <span class="stat-number">7</span>
+                <div class="stat-label">Daily support, every day of the week</div>
+            </div>
+            <div class="stat-item fade-in fade-in-delay-3">
+                <span class="stat-number">2 in 1</span>
+                <div class="stat-label">Coaching + Lessons combined</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PAIN POINTS
+         ============================================ -->
+    <section class="pain-section" id="pain">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Plateau Problem</span>
+                <h2 class="section-heading fade-in">Is Your Progress Stalling?</h2>
+                <span class="section-jp">These are the exact walls our N3+ students break through every day.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card fade-in">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h4>Breaking the Salary Ceiling: N2/N1 & Career Growth</h4>
+                    <p>In Malaysia, JLPT N2/N1 is the key to unlocking a higher Salary/Language Allowance and senior roles. However, the jump from N3 is where most self-study progress stalls.
+                        Textbooks alone can't bridge this gap. Without a strategic roadmap and expert coaching, you're not just struggling with grammar—you're leaving money on the table and delaying the career advancement you deserve.</p>
+                    <div class="pain-jp">Generic courses cannot address your specific gaps — progress stalls.</div>
+                </div>
+                <div class="pain-card fade-in fade-in-delay-1">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2h14M5 22h14M17 2v4.172a2 2 0 0 1-.586 1.414L12 12l-4.414-4.414A2 2 0 0 1 7 6.172V2M7 22v-4.172a2 2 0 0 1 .586-1.414L12 12l4.414 4.414A2 2 0 0 1 17 17.828V22"/></svg>
+                    </div>
+                    <h4>Keigo & Business Japanese</h4>
+                    <p>You can have casual conversations, but the moment you need to use keigo in a meeting
+                        or write a professional email, you freeze. Business Japanese requires a completely different
+                        register — and textbooks alone can't teach you the subtle hierarchy of politeness levels
+                        that Japanese professionals expect.</p>
+                    <div class="pain-jp">Without structure and accountability, motivation fades fast.</div>
+                </div>
+                <div class="pain-card fade-in fade-in-delay-2">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h4>Can Read, Can't Speak</h4>
+                    <p>Your reading comprehension is decent. You can follow manga, articles, even some news.
+                        But when it's time to actually speak — your mind goes blank. You know the grammar,
+                        you know the vocabulary, yet the words won't come out naturally. The gap between
+                        your input skills and output skills keeps growing wider.</p>
+                    <div class="pain-jp">Reading and writing skills don't translate to real conversation without practice.</div>
+                </div>
+                <div class="pain-card fade-in fade-in-delay-3">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h4>The Consistency Gap</h4>
+                    <p>You start with high motivation, but work gets busy and your textbooks gather dust.
+                        Without a strict environment or a coach to keep you accountable, long-term goals
+                        like N1/N2 remain "someday" dreams. You don't lack ability—you lack a system
+                        that ensures you show up every day.</p>
+                    <div class="pain-jp">Without a roadmap, exam preparation becomes guesswork and anxiety.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY CHOOSE US
+         ============================================ -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-heading fade-in">Why Choose MTM Nihongo Coaching?</h2>
+                <span class="section-jp">We don't just teach Japanese. We transform your entire learning experience with a system designed for real results.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Coaching session">
+                        <div class="why-img-overlay"></div>
+                        <div class="why-img-number">01</div>
+                    </div>
+                    <div class="why-content">
+                        <h4>Dual Support: Teaching x Coaching</h4>
+                        <span class="why-jp">レッスンとコーチングの二重サポートシステム</span>
+                        <p>We don't just teach Japanese — we coach your mindset, habits, and long-term
+                            learning strategy. From goal-setting to execution, you'll be guided by a
+                            professional who stays by your side throughout the journey. Teaching covers the "what."
+                            Coaching covers the "how."</p>
+                    </div>
+                </div>
+                <div class="why-card fade-in fade-in-delay-1">
+                    <div class="why-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&q=80" alt="Study desk">
+                        <div class="why-img-overlay"></div>
+                        <div class="why-img-number">02</div>
+                    </div>
+                    <div class="why-content">
+                        <h4>Complete Self-Study Support</h4>
+                        <span class="why-jp">自習の仕組み確立のサポート</span>
+                        <p>Learning doesn't end after the weekly lesson. We help you structure the rest
+                            of your week, ensuring your self-study time becomes productive and
+                            stress-free. Your coach checks in daily to make sure you stay on track and reach your goals
+                            in the shortest possible time.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-in fade-in-delay-2">
+                    <div class="why-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80" alt="Learning">
+                        <div class="why-img-overlay"></div>
+                        <div class="why-img-number">03</div>
+                    </div>
+                    <div class="why-content">
+                        <h4>1-on-1 Personalized Curriculum</h4>
+                        <span class="why-jp">完全個別カリキュラム</span>
+                        <p>Experience a curriculum fully tailored to your unique goals and learning style.
+                            Every session targets your specific weaknesses, helping you overcome obstacles
+                            efficiently. No more wasting time on things you already know. Your path, your pace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COMPARISON TABLE
+         ============================================ -->
+    <section class="comparison-section" id="compare">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Difference</span>
+                <h2 class="section-heading fade-in">Traditional Lessons vs. MTM Method</h2>
+                <span class="section-jp">See why our dual Coaching + Lesson system delivers results that traditional language schools simply can't match.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <table class="comparison-table comparison-main fade-in">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Traditional Language School</th>
+                        <th class="highlight-col">◆ MTM Nihongo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Format</td>
+                        <td>Group class (5-15 students)</td>
+                        <td class="highlight-col"><span class="check-gold">✔ 1-on-1 private</span></td>
+                    </tr>
+                    <tr>
+                        <td>Lesson + Coaching</td>
+                        <td>Weekly group lesson only</td>
+                        <td class="highlight-col"><span class="check-gold">✔ Weekly 1-on-1 lesson + weekly coaching</span></td>
+                    </tr>
+                    <tr>
+                        <td>Curriculum</td>
+                        <td>Same curriculum for everyone</td>
+                        <td class="highlight-col"><span class="check-gold">✔ 100% personalized curriculum</span></td>
+                    </tr>
+                    <tr>
+                        <td>Support between classes</td>
+                        <td>No support between classes</td>
+                        <td class="highlight-col"><span class="check-gold">✔ Daily chat support 7 days/week</span></td>
+                    </tr>
+                    <tr>
+                        <td>Study Plan</td>
+                        <td>You manage your own study plan</td>
+                        <td class="highlight-col"><span class="check-gold">✔ Custom study plan designed for you</span></td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td>No accountability system</td>
+                        <td class="highlight-col"><span class="check-gold">✔ Weekly progress tracking & adjustment</span></td>
+                    </tr>
+                    <tr>
+                        <td>Overall Approach</td>
+                        <td>Teacher teaches, that's it</td>
+                        <td class="highlight-col"><span class="check-gold">✔ Teaching + Coaching + Daily mentoring</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INSTRUCTORS
+         ============================================ -->
+    <section class="instructors-section" id="instructors">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-heading fade-in">Our Instructors</h2>
+                <span class="section-jp">Two types of expert instructors, one unified goal: your success in Japanese.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card fade-in">
+                    <h4>The Native Japanese</h4>
+                    <p class="instructor-bio">Based in Malaysia for 6 years with firsthand understanding of the local workplace and cultural gaps within Japanese subsidiaries. A recruitment expert with 5 years of coaching experience, he knows exactly what Japanese managers look for in top candidates.</p>
+                    <p class="instructor-bio">He specializes in the "unwritten rules" of business Japanese—from Keigo nuances to professional email etiquette. He provides practical communication strategies to help you build trust with Japanese management and secure the senior roles and language allowances you deserve.</p>
+                    <div class="instructor-tags">
+                        <span class="instructor-tag">Business Japanese</span>
+                        <span class="instructor-tag">Cultural Nuance</span>
+                        <span class="instructor-tag">Native Fluency</span>
+                    </div>
+                </div>
+                <div class="instructor-card fade-in fade-in-delay-1">
+                    <h4>The Native Malaysian (N1)</h4>
+                    <p class="instructor-bio">Mastered JLPT N1 from scratch—without ever studying in Japan. With 5 years as a professional instructor and coach, she has helped numerous Malaysian students break through the intermediate plateau. She knows the exact struggles you face firsthand.</p>
+                    <p class="instructor-bio">She identifies the common grammar pitfalls and pronunciation habits unique to Malaysian speakers, providing clear explanations in English, Malay, or Chinese. She doesn't just teach Japanese; she shows you the proven roadmap to reach the top.</p>
+                    <div class="instructor-tags">
+                        <span class="instructor-tag">N1 Certified</span>
+                        <span class="instructor-tag">Bilingual Support</span>
+                        <span class="instructor-tag">JLPT Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE HIGHLIGHTS
+         ============================================ -->
+    <section class="service-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What's Included</span>
+                <h2 class="section-heading fade-in">What's Included</h2>
+                <span class="section-jp">Everything in Your Programme</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="service-grid">
+                <div class="service-item fade-in">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                    <h4>Personalised Study Plan</h4>
+                    <p>Custom JLPT roadmap built from your initial assessment, targeting your exact exam date.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-1">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>1-on-1 Expert Sessions</h4>
+                    <p>Live lessons with N1-certified instructors — no group classes, no waiting, no compromises.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-2">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></span>
+                    <h4>Weekly Coach Check-ins</h4>
+                    <p>Your personal coach reviews progress, adjusts the plan, and keeps you accountable every week.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-3">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                    <h4>Speaking Practice Modules</h4>
+                    <p>Structured speaking practice every session — JLPT listening, conversation, and oral fluency.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                    <h4>Grammar Drills & Corrections</h4>
+                    <p>Written and spoken corrections with detailed explanations — understand why, not just what.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-1">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
+                    <h4>Custom Study Materials</h4>
+                    <p>Handcrafted notes, vocabulary lists, and practice sets tailored to your weaknesses.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-2">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                    <h4>Progress Reports</h4>
+                    <p>Monthly detailed reports tracking improvement by skill: reading, listening, grammar, vocabulary.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-3">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 22v-4"/><path d="M14 22v-4"/><path d="M6 2h12v10a6 6 0 0 1-6 6 6 6 0 0 1-6-6V2z"/></svg></span>
+                    <h4>JLPT Exam Preparation</h4>
+                    <p>Mock exams, section-by-section strategy, and time management training — built around your target JLPT level and exam date.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Personal Career Mentoring</h4>
+                    <p>Beyond the language. Get expert advice on your CV, interview prep, and salary negotiation strategies to secure senior roles in Japanese companies.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-1">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                    <h4>Real-Business Email & Document Review</h4>
+                    <p>Don't just study "sample" emails. Submit your actual work drafts and get professional feedback to ensure your communication with Japanese bosses is flawless and respectful.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-2">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Access to Exclusive Networking / Community</h4>
+                    <p>Join a community of high-achieving Malaysian professionals. Share insights, industry tips, and stay motivated with peers who are also conquering the N1/N2 plateau.</p>
+                </div>
+                <div class="service-item fade-in fade-in-delay-3">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8"/><path d="M8 14h4"/></svg></span>
+                    <h4>Role-Play Practice for Real Meetings</h4>
+                    <p>Don't just memorize phrases—practice them in action. We simulate your actual workplace scenarios, from high-stakes meetings to client negotiations, so you can speak with confidence and authority.</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS
+         ============================================ -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Getting Started</span>
+                <h2 class="section-heading fade-in">Getting Started</h2>
+                <span class="section-jp">Four Simple Steps to Begin</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item fade-in">
+                    <div class="step-number">01</div>
+                    <h4>Free Consultation</h4>
+                    <p>Book a free 30-minute session via WhatsApp or email. We assess your current level, goals, and timeline with no obligation.</p>
+                </div>
+                <div class="step-item fade-in fade-in-delay-1">
+                    <div class="step-number">02</div>
+                    <h4>Level Assessment</h4>
+                    <p>Complete a brief placement assessment. We identify your exact strengths and gaps across grammar, reading, and listening.</p>
+                </div>
+                <div class="step-item fade-in fade-in-delay-2">
+                    <div class="step-number">03</div>
+                    <h4>Your Plan is Built</h4>
+                    <p>We match you with your instructor and personal coach, then design your bespoke study plan within 5 days.</p>
+                </div>
+                <div class="step-item fade-in fade-in-delay-3">
+                    <div class="step-number">04</div>
+                    <h4>Start Mastering</h4>
+                    <p>Your first session begins. Weekly check-ins, regular adjustments, and constant progress toward your goal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRICING
+         ============================================ -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Investment</span>
+                <h2 class="section-heading fade-in">Plan & Pricing</h2>
+                <span class="section-jp">Choose the plan that fits your goals. Both include our complete coaching system.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <span class="pricing-plan-name">Plan A</span>
+                    <h3>3 Months — Short-Term Intensive</h3>
+                    <div class="price-main">
+                        <span class="price-currency">RM</span>
+                        <span class="price-amount">3,000</span>
+                    </div>
+                    <div class="price-breakdown">RM 1,000 / month</div>
+                    <div class="price-per-day">Perfect for those who want to build strong fundamentals and form solid study habits fast.</div>
+                    <ul class="pricing-features">
+                        <li><span class="feat-icon">◆</span> 4x 60-min lessons / month</li>
+                        <li><span class="feat-icon">◆</span> 4x 30-min coaching / month</li>
+                        <li><span class="feat-icon">◆</span> Daily chat support</li>
+                        <li><span class="feat-icon">◆</span> Personal study plan</li>
+                        <li><span class="feat-icon">◆</span> Progress tracking</li>
+                        <li><span class="feat-icon">◆</span> Career consultation</li>
+                    </ul>
+                    <a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener" class="btn-outline" style="width:100%; justify-content: center;">Get Started</a>
+                </div>
+                <div class="pricing-card featured fade-in fade-in-delay-1">
+                    <div class="pricing-badge">Most Popular</div>
+                    <span class="pricing-plan-name">Plan B</span>
+                    <h3>6 Months — Standard Plan</h3>
+                    <div class="price-main">
+                        <span class="price-currency">RM</span>
+                        <span class="price-amount">5,000</span>
+                    </div>
+                    <div class="price-breakdown">RM 833 / month · Save RM 1,000</div>
+                    <div class="price-per-day">Ideal for those aiming for JLPT N1-N2 or advancing their career with Japanese.</div>
+                    <ul class="pricing-features">
+                        <li><span class="feat-icon">◆</span> 4x 60-min lessons / month</li>
+                        <li><span class="feat-icon">◆</span> 4x 30-min coaching / month</li>
+                        <li><span class="feat-icon">◆</span> Daily chat support</li>
+                        <li><span class="feat-icon">◆</span> Personal study plan</li>
+                        <li><span class="feat-icon">◆</span> Progress tracking</li>
+                        <li><span class="feat-icon">◆</span> Career consultation</li>
+                    </ul>
+                    <a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener" class="btn-primary" style="width:100%; justify-content: center;">Get Started ◆</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS
+         ============================================ -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Success Stories</span>
+                <h2 class="section-heading fade-in">What Our Students Say</h2>
+                <span class="section-jp">Real stories from real students who transformed their Japanese with MTM.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Honestly, I was stuck at N3 for like two years and had basically given up on ever passing N2. I tried textbooks, YouTube, apps — nothing really worked because I had no one to tell me what I was actually doing wrong. When I started with MTM, my coach sat down and figured out exactly where my weak points were. We built a plan around my work schedule, and she kept me accountable every single day through WhatsApp. There were days I didn't feel like studying, but knowing someone was checking in on me made all the difference. I passed N2 last July and honestly still can't believe it. If you're stuck in that N3 limbo, just try it.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Student A</h5>
+                            <span class="author-meta">Malaysian, 20s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-1">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">I've been working at a Japanese company for five years, and my spoken Japanese was decent for casual conversations. But whenever I had to join a meeting with HQ in Tokyo or write a formal email to my GM, I'd freeze up. I just didn't have the right keigo and I was terrified of saying something rude without realising it. My coach is a native Japanese speaker who's lived in Malaysia for years, so he understood exactly what I was going through. He didn't just teach me textbook keigo — he gave me actual phrases and templates I could use in real meetings. He even role-played scenarios with me so I could practise before important calls. My manager actually commented that my Japanese has gotten noticeably more professional. That alone made it worth it.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Student B</h5>
+                            <span class="author-meta">Malaysian, 30s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-2">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">I can read manga and watch anime without subtitles, but when it comes to actually speaking? Total disaster. My brain just couldn't switch from "input mode" to "output mode." I knew the grammar, I knew the vocab, but the words just wouldn't come out naturally. MTM's approach was completely different from anything I'd tried before. Instead of more textbook drills, my coach focused on getting me to actually talk — every single session. She'd correct my pronunciation habits that I didn't even know I had (apparently I had a very "Malaysian" way of saying certain sounds). After about three months, I started thinking in Japanese without translating from English first. That was the breakthrough moment for me.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Student C</h5>
+                            <span class="author-meta">Malaysian, 20s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-3">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">I wanted to get N1 because my company gives a pretty significant language allowance for it, but I'd failed the exam twice already and was running out of motivation. What I liked about MTM is that they didn't just throw practice tests at me and say "do more questions." My coach actually analysed my mock exam results section by section and figured out that my reading comprehension was dragging my score down — not because I couldn't read, but because my time management was terrible. We worked on speed-reading strategies and he taught me how to identify the key information in long passages without reading every single word. I also got daily assignments through WhatsApp, which sounds intense but it actually kept me on track. Passed N1 in December. The language allowance bump already paid for the whole programme twice over.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Student D</h5>
+                            <span class="author-meta">Malaysian, 30s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ
+         ============================================ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Questions & Answers</span>
+                <h2 class="section-heading fade-in">Frequently Asked Questions</h2>
+                <span class="section-jp">Everything you need to know before getting started.</span>
+            </div>
+            <div class="section-divider">
+                <div class="section-divider-diamond">◆</div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What level of Japanese do I need to start?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our program is designed for learners at JLPT N3 level and above. Our coaching system
+                            is most effective for intermediate and advanced learners who want to break through
+                            plateaus, master business Japanese, or achieve N2/N1 certification. If you're currently
+                            below N3, reach out and we'll discuss the best path forward for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">How are lessons conducted?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All lessons and coaching sessions are conducted online via Zoom. You can join from
+                            anywhere with a stable internet connection. Sessions are scheduled at times convenient
+                            for you, including evenings and weekends.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What's the difference between a "lesson" and a "coaching session"?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lessons focus on teaching new content — grammar, vocabulary, reading, and speaking practice.
+                            Coaching sessions focus on reviewing your progress, adjusting your study plan, addressing
+                            challenges, and keeping you accountable. Together, they form a complete system.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Can I choose my lesson schedule?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We offer flexible scheduling including evenings and weekends. Your schedule is
+                            arranged directly with your instructor to fit your lifestyle.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Is the daily chat support really available every day?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Your coach is available via chat 7 days a week. Response times are typically
+                            within a few hours during business hours. You can ask questions, submit assignments,
+                            or simply check in with your progress.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">Do you offer a trial lesson?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a free 30-minute consultation session where we assess your level and discuss
+                            your goals. This is not a sales pitch — it's a genuine assessment to see if we're the
+                            right fit for your learning journey.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">What payment methods do you accept?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept bank transfer and major payment methods available in Malaysia. Payment plans
+                            can be discussed during your consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA
+         ============================================ -->
+    <section class="cta-section" id="contact">
+        <div class="cta-watermark" aria-hidden="true">始</div>
+        <div class="cta-inner">
+            <div class="cta-content fade-in">
+                <span class="section-label">Take the First Step</span>
+                <h2>Stop learning.<br><em>Start mastering.</em></h2>
+                <p>Book your free 30-minute consultation today. We'll assess your level, understand your goals,
+                    and design a personalized path forward — at no cost.</p>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-icon">W</div>
+                        <a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener">+60 16-623 2320 (WhatsApp preferred)</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">@</div>
+                        <a href="mailto:contact@mtmnihongo.com">contact@mtmnihongo.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-form fade-in fade-in-delay-1">
+                <div class="form-title">Request Free Consultation</div>
+                <div class="form-subtitle">無料相談のお申し込み — We'll respond within 24 hours</div>
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp / Phone</label>
+                        <input type="tel" placeholder="+60 1X-XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Current JLPT Level</label>
+                        <select required>
+                            <option value="" disabled selected>Select your level</option>
+                            <option>No JLPT</option>
+                            <option>Below N3 (need assessment)</option>
+                            <option>N3 (currently studying)</option>
+                            <option>N3 (passed, aiming for N2)</option>
+                            <option>N2 (currently studying)</option>
+                            <option>N2 (passed, aiming for N1)</option>
+                            <option>N1 holder</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Target Programme</label>
+                        <select>
+                            <option value="" disabled selected>Which plan interests you?</option>
+                            <option>Plan A — 3 Months Short-Term Intensive (RM 3,000)</option>
+                            <option>Plan B — 6 Months Standard Plan (RM 5,000)</option>
+                            <option>Not sure yet — need advice</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message (optional)</label>
+                        <textarea placeholder="Tell us about your learning goals or any questions..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">SEND</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="MTM%20NIHONGO%20COACHING%20(2).png" alt="MTM Nihongo Coaching">
+                    <div class="footer-brand-name">MTM Nihongo Coaching</div>
+                    <span class="footer-brand-jp">日本語コーチング</span>
+                    <p>Premium 1-on-1 Japanese language coaching for Malaysian working adults.
+                    Combining expert instruction with personal coaching to help you break through
+                    the intermediate plateau.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#pain">Program</a></li>
+                        <li><a href="#why">Why Us</a></li>
+                        <li><a href="#instructors">Instructors</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener">+60 16-623 2320</a></li>
+                        <li><a href="mailto:contact@mtmnihongo.com">contact@mtmnihongo.com</a></li>
+                        <li><a href="https://wa.me/60166232320?text=Hi%2C%20I%27m%20interested%20in%20MTM%20Nihongo%20Coaching.%20I%27d%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    &copy; 2026 MTM Nihongo Coaching. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        /* ============================================
+           NAVBAR SCROLL BEHAVIOR
+           ============================================ */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+
+        /* ============================================
+           INTERSECTION OBSERVER — FADE IN
+           ============================================ */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                // Toggle clicked
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        /* ============================================
+           FORM SUBMISSION
+           ============================================ */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('input[type="text"]').value;
+            const phone = form.querySelector('input[type="tel"]').value;
+            const level = form.querySelector('select').value;
+            const programme = form.querySelectorAll('select')[1].value;
+            const message = form.querySelector('textarea').value;
+
+            const waMessage = encodeURIComponent(
+                `こんにちは！MTM Nihongo Coachingの無料相談を希望します。\n\n` +
+                `名前 / Name: ${name}\n` +
+                `連絡先 / Phone: ${phone}\n` +
+                `レベル / Level: ${level}\n` +
+                `プラン / Programme: ${programme}\n` +
+                `メッセージ / Message: ${message || 'N/A'}`
+            );
+
+            window.open(`https://wa.me/60166232320?text=${waMessage}`, '_blank', 'noopener');
+
+            const btn = form.querySelector('.form-submit');
+            btn.textContent = 'Redirecting to WhatsApp... ◆';
+            btn.style.background = 'var(--gold-light)';
+
+            setTimeout(() => {
+                btn.textContent = 'SEND';
+                btn.style.background = '';
+                form.reset();
+            }, 3000);
+        }
+
+        /* ============================================
+           SMOOTH SCROLL FOR ANCHOR LINKS
+           ============================================ */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        /* ============================================
+           COUNTER ANIMATION FOR STATS
+           ============================================ */
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent.trim();
+                        if (text === '100%') {
+                            animateValue(num, 0, 100, 1200, '%');
+                        } else if (text === 'Native level') {
+                            // No animation for non-numeric
+                        } else if (text === '7') {
+                            animateValue(num, 0, 7, 800, '');
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsBar = document.querySelector('.stats-bar-inner');
+        if (statsBar) statsObserver.observe(statsBar);
+
+        function animateValue(el, start, end, duration, suffix) {
+            const startTime = performance.now();
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(start + (end - start) * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+    </script>
 </body>
 </html>
